@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PlaztiSquare';
+  a = 5;
+  b = 6;
 }
