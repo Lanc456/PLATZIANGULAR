@@ -1,0 +1,26 @@
+<div class="container col-7">
+    <h1>Editar Estudiante</h1>
+  <div class="form-group">
+    <label>Codigo Estudiante</label>
+    <input type="text" class="form-control"  [(ngModel)]="estudiante.codigo"  >
+  </div>
+  <div class="form-group">
+    <label>Nombre Estudiante</label>
+    <input type="text" class="form-control"  [(ngModel)]="estudiante.nombre" >
+  </div>
+  <div class="form-group">
+    <label>Pais del Estudiante</label>
+    <input type="text" class="form-control" [(ngModel)]="estudiante.pais" >
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+    <a class="btn btn-primary" (click)="guardarlugar()" >Enviar</a> 
+    </div>
+    <div class="col-sm-2">
+        <a class="btn btn-primary" (click)="EliminarEstudiante()" >Eliminar</a> 
+        </div>
+    <div class="col-1">
+    <a class="btn btn-primary" routerLink="/obtenerestudiante">Cancelar</a>
+  </div>
+  </div>
+</div>

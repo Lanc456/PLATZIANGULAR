@@ -1,0 +1,44 @@
+<div style="text-align:center">
+    <h1>
+      Bienvenido a {{ title }}!
+    </h1>
+    <h1>
+      {{a + b }}
+    </h1>  
+    <button [disabled]= "!listo" (click)= "hacerAlgo()" >Aceptar Datos</button>
+    <hr/>
+    <input type="text" placeholder="Tu Nombre"  [(ngModel)]="nombre" />
+    <br/>
+    Mi nombre es {{ nombre }}
+    <hr/>
+     <input type="text" placeholder="Tu Nombre"  [(ngModel)]="apellido" />
+    <br/>
+    Mi apellido  es {{ apellido }}
+
+    <div class="container">
+     
+      <div class="row">
+        <div class="col-md-5">
+            <h1>Lugares Cercanos</h1>
+    <ul>
+       <ng-container *ngFor="let lugar of lugares">
+        <a routerLink="detalle/{{lugar.id}}" [queryParams]="{action:'ver',referido:'si'}" >  <li class="list-group-item" *ngIf="lugar.active">{{lugar.nombres}}</li> </a>
+       </ng-container>
+    </ul>
+       </div>
+       <div class="col-md-5">
+          <h1>Detacados</h1>
+    <ul>
+     
+      <ng-container *ngFor="let lugar of lugares; let i = index" [ngSwitch]="lugar.cercania" >
+     <a>    <li class="list-group-item" contar-clicks [ngStyle] ="{color:(lugar.active) ? 'black': 'gray'}" [ngClass]="{numer_par : (i+1) % 2 !== 0}" [resaltar] = "lugar.plan">
+          {{lugar.nombres}} - 
+          <span *ngSwitchCase="1"  [ngStyle]="{color:'green'}" >Muy Cercano</span>
+          <span *ngSwitchCase="2"  [ngStyle]="{color:'black'}">Cercano</span>
+          <span *ngSwitchCase="3" [ngStyle]= "{color:'blue'}" >Lejano</span>
+        </li></a>
+      </ng-container>
+   </ul>
+  </div>
+  </div>
+   </div>

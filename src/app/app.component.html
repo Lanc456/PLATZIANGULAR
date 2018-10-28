@@ -1,23 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Bienvenido a {{ title }}!
-  </h1>
-  <h1>
-    {{a + b }}
-  </h1>  
-  <button [disabled]="!listo" (click)= "hacerAlgo()" >Aceptar Datos</button>
-  <hr/>
-  <input type="text" placeholder="Tu Nombre"  [(ngModel)]="nombre" />
-  <br/>
-  Mi nombre es {{ nombre }}
-
-  <ul>
-     <ng-container *ngFor="let lugar of lugares">
-       <li *ngIf="lugar.active">{{lugar.nombres}}</li>
-     </ng-container>
-  </ul>
-  
-</div>
-
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Platzi Square</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li routerlinkactive class="nav-item">
+          <a class="nav-link" routerLink="/">Lugares <span class="sr-only">(current)</span></a>
+        </li>
+        <li routerlinkactive class="nav-item">
+          <a class="nav-link" routerLink="/contacto">Contacto</a>
+        </li>
+        <li routerlinkactive class="nav-item">
+          <a class="nav-link" routerLink="/obtenerestudiante">Estudiante</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ <router-outlet></router-outlet>

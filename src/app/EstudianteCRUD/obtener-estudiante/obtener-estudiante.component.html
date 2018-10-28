@@ -1,0 +1,31 @@
+
+<div class="container col-7">
+    <div class="row" >
+      <div class="col-7">
+    <h1>Estudiante</h1>
+     </div>
+     <div class="col-3">
+    <a class="btn btn-primary" routerLink="/estudiante">Crear Estudiante</a>
+     </div>
+    </div>
+  <br>
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Pais</th>
+          <th colspan="2" ></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let alumno of Estudiante">
+            <td>{{alumno.codigo}}</td>
+            <td>{{alumno.nombre}}</td>
+            <td>{{alumno.pais}}</td>
+            <td><a class="btn btn-primary" routerLink="../editarestudiante/{{alumno.id}}">Editar</a></td>
+         
+          </tr>
+        </tbody>
+    </table>
+</div>
