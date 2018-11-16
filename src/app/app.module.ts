@@ -9,12 +9,20 @@ import { DetalleComponent } from './LugaresCRUD/detalle/detalle.component';
 import { LugaresComponent } from './LugaresCRUD/lugares/lugares.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DatosLugaresService } from './services/datos-lugares.service';
+import { ProfesorFirebaseService } from './services/profesor-firebase.service'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CrearEstudianteComponent } from './EstudianteCRUD/crear-estudiante/crear-estudiante.component';
 import { ObtenerEstudianteComponent } from './EstudianteCRUD/obtener-estudiante/obtener-estudiante.component';
 import { EditarEstudianteComponent } from './EstudianteCRUD/editar-estudiante/editar-estudiante.component';
+import { EditarProfesorComponent } from './ProfesorCRUD/editar-profesor/editar-profesor.component';
+import { CrearProfesorComponent } from './ProfesorCRUD/crear-profesor/crear-profesor.component';
+import { ObtenerProfesorComponent } from './ProfesorCRUD/obtener-profesor/obtener-profesor.component';
+import { HttpClientModule  } from '@angular/common/http';
+import { LogicaMatematicasPipe } from './Pipes/Exponentials/logica-matematicas.pipe';
+import { SumarDatos } from './Pipes/Suma/Sumar-Datos.pipe';
+import { CorreoServicioService } from './services/correo-servicio.service';
 
 
 
@@ -25,7 +33,10 @@ const appRoutes: Routes = [
    {path:'contacto',component:ContactoComponent},
    {path:'estudiante',component:CrearEstudianteComponent},
    {path:'obtenerestudiante',component:ObtenerEstudianteComponent},
-   {path:'editarestudiante/:id',component:EditarEstudianteComponent}
+   {path:'editarestudiante/:id',component:EditarEstudianteComponent},
+   {path:'crearprofesor',component:CrearProfesorComponent},
+   {path:'obtenerprofesor',component:ObtenerProfesorComponent},
+   {path:'editarprofesor/:id',component:EditarProfesorComponent}
 ]
 
 export const firebaseConfig = {
@@ -48,7 +59,11 @@ export const firebaseConfig = {
     CrearEstudianteComponent,
     ObtenerEstudianteComponent,
     EditarEstudianteComponent,
-    
+    EditarProfesorComponent,
+    CrearProfesorComponent,
+    ObtenerProfesorComponent,
+    LogicaMatematicasPipe,
+    SumarDatos
   ],
   imports: [
     BrowserModule,
@@ -56,9 +71,10 @@ export const firebaseConfig = {
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
-  providers: [DatosLugaresService],
+  providers: [DatosLugaresService,ProfesorFirebaseService,CorreoServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

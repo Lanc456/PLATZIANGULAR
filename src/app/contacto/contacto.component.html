@@ -3,13 +3,14 @@
       <div class="well">
           <a routerLink="/">Lugares</a>/Contacto
         </div>
- <label>Nombre: </label>
- <input type="text" class="form-control" />
- <label>Correo: </label>
- <input type="text" class="form-control" />
- <label>Mensaje: </label>
- <textarea  class="form-control"> </textarea>
- <hr/>
- <a class="btn btn-primary">Enviar</a>
- 
+ <form (ngSubmit)="contactForm(form.value)" #form="ngForm">
+    <label>Nombre: </label>
+    <input type="text" class="form-control" name="nombre" ngModel />
+    <label>Correo: </label>
+    <input type="text" class="form-control" name="mail" ngModel />
+    <label>Mensaje: </label>
+    <textarea  class="form-control" name="mensaje" ngModel> </textarea>
+    <hr/>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+ </form>
 </div>

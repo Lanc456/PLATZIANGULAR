@@ -2,6 +2,10 @@
     <h1>
       Bienvenido a {{ title }}!
     </h1>
+    <h2> Sumar números</h2>
+    <div>Numero uno: <input type="number" [(ngModel)]="power"></div>
+    <div>Numero dos: <input type="number" [(ngModel)]="factor"></div>
+    <p> Sumatoria de Dos Numeros: {{power | Sumar: factor}}</p>
     <h1>
       {{a + b }}
     </h1>  
@@ -25,6 +29,7 @@
         <a routerLink="detalle/{{lugar.id}}" [queryParams]="{action:'ver',referido:'si'}" >  <li class="list-group-item" *ngIf="lugar.active">{{lugar.nombres}}</li> </a>
        </ng-container>
     </ul>
+    
        </div>
        <div class="col-md-5">
           <h1>Detacados</h1>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CorreoServicioService } from '../services/correo-servicio.service';
 
 @Component({
   selector: 'app-contacto',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ContactaServicio: CorreoServicioService ) { }
+
+  contactForm(form) {
+    console.log(form);
+    this.ContactaServicio.EnvioCorreo(form);
+  }
+
+
 
   ngOnInit() {
   }
+
+
+
 
 }

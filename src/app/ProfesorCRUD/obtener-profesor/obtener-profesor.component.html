@@ -1,0 +1,29 @@
+<div class="container col-7">
+  <div class="row" >
+    <div class="col-7">
+  <h1>Profesor</h1>
+   </div>
+   <div class="col-3">
+  <a class="btn btn-primary" routerLink="/crearprofesor">Crear Profesor</a>
+   </div>
+  </div>
+<br>
+  <table class="table">
+    <thead class="thead">
+      <tr>
+        <th>Codigo del Profesor</th>
+        <th>Nombre Profesor</th>
+        <th>Materia</th>
+        <th>Edad</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let _profesor of Profesor">
+          <td>{{_profesor.id}}</td>
+          <td>{{_profesor.NombreProfesor}}</td>
+          <td>{{_profesor.Materia}}</td>
+          <td>{{_profesor.Edad}}</td>
+        </tr>
+      </tbody>
+  </table>
+</div>

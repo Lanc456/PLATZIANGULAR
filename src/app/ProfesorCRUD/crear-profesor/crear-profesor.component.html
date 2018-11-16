@@ -1,0 +1,37 @@
+
+<div class="container col-7">
+  <h1>Crear Profesor</h1>
+<div class="form-group">
+  <label>Codigo Profesor</label>
+  <input type="text" class="form-control" [(ngModel)]="profesor.id"  >
+</div>
+<div class="form-group">
+  <label>Nombre Profesor</label>
+  <input type="text" class="form-control" [(ngModel)]="profesor.NombreProfesor" >
+</div>
+<div class="form-group">
+  <label>Materia</label>
+  <input type="text" class="form-control" [(ngModel)]="profesor.Materia" >
+</div>
+<div class="form-group">
+  <label>Edad</label>
+  <input type="number" class="form-control" [(ngModel)]="profesor.Edad" >
+</div>
+<div class="row">
+    <div class="col-16">
+        <p> La fecha es: {{today | date}}  </p>
+        <p> El numero ganador es: {{numero | number:'1.1-2'}}  </p>
+        <p>Super power boost: {{2 | exponentialStrength: 3}}</p>
+        <p>Quiero sumar 2 mas 3 es igual = {{2 | Sumar: 3}}</p>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-2">
+  <a class="btn btn-primary" (click)="guardarProfesor()"  >Enviar</a> 
+  </div>
+  <div class="col-1">
+  <a class="btn btn-primary" routerLink="/obtenerprofesor">Cancelar</a>
+</div>
+</div>
+
+</div>
