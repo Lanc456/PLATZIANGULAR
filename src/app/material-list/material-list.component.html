@@ -1,0 +1,20 @@
+<p>
+  material-list works!
+</p>
+
+<ul>
+    <li *ngFor="let logro of Logros">
+      <h3>{{logro.titulo  }}</h3>
+      <p>{{logro.Descripcion | truncate: 30 }}</p>
+    </li>
+</ul>
+
+<mat-list>
+    <mat-list-item *ngFor="let logro of Logros">
+      <h3 matLine>{{logro.titulo}}</h3>
+      <p matLine>{{logro.Descripcion | truncate: 30}}</p>
+    </mat-list-item>
+  </mat-list>
+  
+  
+

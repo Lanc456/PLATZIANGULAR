@@ -11,7 +11,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { DatosLugaresService } from './services/datos-lugares.service';
 import { ProfesorFirebaseService } from './services/profesor-firebase.service'
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CrearEstudianteComponent } from './EstudianteCRUD/crear-estudiante/crear-estudiante.component';
 import { ObtenerEstudianteComponent } from './EstudianteCRUD/obtener-estudiante/obtener-estudiante.component';
@@ -23,6 +23,9 @@ import { HttpClientModule  } from '@angular/common/http';
 import { LogicaMatematicasPipe } from './Pipes/Exponentials/logica-matematicas.pipe';
 import { SumarDatos } from './Pipes/Suma/Sumar-Datos.pipe';
 import { CorreoServicioService } from './services/correo-servicio.service';
+import {MatListModule} from '@angular/material/list';
+import {TruncatePipe} from './Pipes/Truncate/truncate.pipe';
+import {MaterialListComponent } from './material-list/material-list.component';
 
 
 
@@ -36,7 +39,8 @@ const appRoutes: Routes = [
    {path:'editarestudiante/:id',component:EditarEstudianteComponent},
    {path:'crearprofesor',component:CrearProfesorComponent},
    {path:'obtenerprofesor',component:ObtenerProfesorComponent},
-   {path:'editarprofesor/:id',component:EditarProfesorComponent}
+   {path:'editarprofesor/:id',component:EditarProfesorComponent},
+   {path:'MaterialList',component:MaterialListComponent}
 ]
 
 export const firebaseConfig = {
@@ -63,7 +67,9 @@ export const firebaseConfig = {
     CrearProfesorComponent,
     ObtenerProfesorComponent,
     LogicaMatematicasPipe,
-    SumarDatos
+    SumarDatos,
+    TruncatePipe,
+    MaterialListComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +78,8 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule, 
+    MatListModule
   ],
   providers: [DatosLugaresService,ProfesorFirebaseService,CorreoServicioService],
   bootstrap: [AppComponent]
