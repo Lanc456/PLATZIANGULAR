@@ -26,6 +26,8 @@ import { CorreoServicioService } from './services/correo-servicio.service';
 import {MatListModule} from '@angular/material/list';
 import {TruncatePipe} from './Pipes/Truncate/truncate.pipe';
 import {MaterialListComponent } from './material-list/material-list.component';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
 
 
 
@@ -79,7 +81,8 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     HttpClientModule, 
-    MatListModule
+    MatListModule,
+    [MatButtonModule, MatCheckboxModule]
   ],
   providers: [DatosLugaresService,ProfesorFirebaseService,CorreoServicioService],
   bootstrap: [AppComponent]
